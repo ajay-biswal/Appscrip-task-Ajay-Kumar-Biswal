@@ -1,0 +1,165 @@
+.header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.headerInner {
+  width: min(100% - 80px, 1440px);
+  min-height: 80px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  color: #111;
+  text-decoration: none;
+
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin-left: auto;
+  margin-right: 48px;
+}
+
+.navigation a {
+  color: #111;
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.actions button {
+  width: 28px;
+  height: 28px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  color: #111;
+  font-size: 21px;
+  cursor: pointer;
+}
+
+.searchIcon {
+  position: relative;
+  display: block;
+
+  width: 15px;
+  height: 15px;
+
+  border: 1.5px solid #111;
+  border-radius: 50%;
+}
+
+.searchIcon::after {
+  content: "";
+
+  position: absolute;
+  right: -5px;
+  bottom: -3px;
+
+  width: 6px;
+  height: 1.5px;
+
+  background: #111;
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+.menuButton {
+  display: none;
+}
+
+.actions svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 900px) {
+  .actions svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .headerInner {
+    width: calc(100% - 32px);
+    min-height: 64px;
+  }
+
+  .menuButton {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+
+    margin-right: 16px;
+
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .menuButton span {
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: #111;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .actions {
+    margin-left: auto;
+    gap: 6px;
+  }
+
+  .actions button {
+    width: 26px;
+    height: 26px;
+    font-size: 18px;
+  }
+
+  .accountButton {
+    display: none !important;
+  }
+}

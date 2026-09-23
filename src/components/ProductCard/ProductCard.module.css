@@ -1,0 +1,62 @@
+.card {
+  min-width: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.82;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+.image {
+  object-fit: contain;
+  padding: 12px;
+}
+
+.favorite {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0;
+  background: transparent;
+
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.details {
+  padding-top: 12px;
+}
+
+.details h2 {
+  margin: 0;
+
+  color: #222;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.loginText {
+  margin: 7px 0 0;
+
+  color: #888;
+  font-size: 10px;
+  line-height: 1.4;
+}

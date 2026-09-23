@@ -1,0 +1,17 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  color: #666;
+}
+
+.breadcrumb a {
+  color: #222;
+  text-decoration: none;
+}
+
+.breadcrumb span:last-child {
+  color: #666;
+}
