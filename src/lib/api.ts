@@ -2,7 +2,7 @@ const PRODUCTS_API_URL = process.env.PRODUCTS_API_URL;
 
 export async function getProducts() {
   if (!PRODUCTS_API_URL) {
-    throw new Error("PRODUCTS_API_URL is not configured");
+    throw new Error("PRODUCTS_API_URL is not reachable");
   }
 
   const response = await fetch(PRODUCTS_API_URL, {
