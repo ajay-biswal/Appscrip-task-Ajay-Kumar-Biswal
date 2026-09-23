@@ -1,165 +1,260 @@
 .header {
   width: 100%;
   background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  color: #111;
+
+  border-bottom: none;
 }
 
-.headerInner {
-  width: min(100% - 80px, 1440px);
-  min-height: 80px;
+/* -----------------------------
+   Mobile announcement
+----------------------------- */
+
+.announcement {
+  display: none;
+}
+
+/* -----------------------------
+   Main row
+----------------------------- */
+
+.topRow {
+  position: relative;
+
+  width: calc(100% - 96px);
+  max-width: 1440px;
+
+  height: 58px;
+
   margin: 0 auto;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
+.leftSection {
+  display: flex;
+  align-items: center;
+
+  width: 160px;
+}
+
+.desktopBrandMark {
+  display: flex;
+  align-items: center;
+}
+
+.brandMark {
+  width: 21px;
+  height: 21px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* -----------------------------
+   Logo
+----------------------------- */
+
 .logo {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
   color: #111;
   text-decoration: none;
 
-  font-size: 28px;
+  font-size: 23px;
   line-height: 1;
+
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 
-.navigation {
+/* -----------------------------
+   Header actions
+----------------------------- */
+
+.actions {
   display: flex;
   align-items: center;
-  gap: 34px;
-  margin-left: auto;
-  margin-right: 48px;
+  justify-content: flex-end;
+
+  gap: 13px;
+
+  width: 160px;
+}
+
+.actions button {
+  width: 24px;
+  height: 24px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: #111;
+
+  cursor: pointer;
+}
+
+.actions svg {
+  width: 18px;
+  height: 18px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* -----------------------------
+   Desktop navigation
+----------------------------- */
+
+.navigation {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 32px;
+
+  border-top: none;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .navigation a {
   color: #111;
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.4px;
+
+  letter-spacing: 0.15px;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.actions button {
-  width: 28px;
-  height: 28px;
-
-  display: grid;
-  place-items: center;
-
-  padding: 0;
-  border: 0;
-  background: transparent;
-
-  color: #111;
-  font-size: 21px;
-  cursor: pointer;
-}
-
-.searchIcon {
-  position: relative;
-  display: block;
-
-  width: 15px;
-  height: 15px;
-
-  border: 1.5px solid #111;
-  border-radius: 50%;
-}
-
-.searchIcon::after {
-  content: "";
-
-  position: absolute;
-  right: -5px;
-  bottom: -3px;
-
-  width: 6px;
-  height: 1.5px;
-
-  background: #111;
-  transform: rotate(45deg);
-  transform-origin: left center;
-}
+/* -----------------------------
+   Menu button
+----------------------------- */
 
 .menuButton {
   display: none;
 }
 
-.actions svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+/* -----------------------------
+   Mobile
+----------------------------- */
 
-@media (max-width: 900px) {
-  .actions svg {
-    width: 18px;
-    height: 18px;
+@media (max-width: 768px) {
+  .announcement {
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    background: #050505;
+    color: #fff;
+
+    font-size: 9px;
   }
-}
 
-@media (max-width: 900px) {
-  .headerInner {
-    width: calc(100% - 32px);
-    min-height: 64px;
+  .announcement .brandMark {
+    width: 11px;
+    height: 11px;
+  }
+
+  .topRow {
+    width: 100%;
+    height: 54px;
+
+    padding: 0 16px;
+
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .leftSection {
+    width: auto;
+    gap: 9px;
+  }
+
+  .desktopBrandMark {
+    display: flex;
+  }
+
+  .desktopBrandMark .brandMark {
+    width: 23px;
+    height: 23px;
   }
 
   .menuButton {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-
-    margin-right: 16px;
+    display: grid;
+    place-items: center;
 
     padding: 0;
+
     border: 0;
     background: transparent;
+
+    color: #111;
 
     cursor: pointer;
   }
 
-  .menuButton span {
-    display: block;
-    width: 18px;
-    height: 1px;
-    background: #111;
+  .menuButton svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linecap: round;
   }
 
   .logo {
     font-size: 21px;
-  }
-
-  .navigation {
-    display: none;
+    letter-spacing: 2px;
   }
 
   .actions {
-    margin-left: auto;
-    gap: 6px;
+    width: auto;
+    gap: 8px;
   }
 
   .actions button {
-    width: 26px;
-    height: 26px;
-    font-size: 18px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .actions svg {
+    width: 18px;
+    height: 18px;
   }
 
   .accountButton {
     display: none !important;
+  }
+
+  .navigation {
+    display: none;
   }
 }

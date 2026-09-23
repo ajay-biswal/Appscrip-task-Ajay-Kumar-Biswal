@@ -7,26 +7,23 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
-  padding: 20px 0;
-
+  padding: 16px 0;
   border-bottom: 1px solid #e5e5e5;
-
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
 }
 
 .customizable input,
 .options input {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   margin: 0;
   accent-color: #111;
 }
 
 .filter {
   border-bottom: 1px solid #e5e5e5;
-  padding: 20px 0;
+  padding: 16px 0;
 }
 
 .filter summary {
@@ -37,7 +34,7 @@
   cursor: pointer;
   list-style: none;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.2px;
 }
@@ -46,17 +43,31 @@
   display: none;
 }
 
+.filter summary::marker {
+  display: none;
+}
+
 .chevron {
-  font-size: 14px;
-  font-weight: 400;
+  width: 6px;
+  height: 6px;
+
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+/* Open accordion */
+.filter[open] .chevron {
+  transform: rotate(225deg);
 }
 
 .options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-
-  padding-top: 18px;
+  gap: 11px;
+  padding-top: 16px;
 }
 
 .options label {
@@ -65,7 +76,15 @@
   gap: 9px;
 
   color: #555;
-  font-size: 11px;
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.allOption {
+  color: #aaa !important;
+  font-size: 9px !important;
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -74,8 +93,16 @@
     width: 100%;
   }
 
-  .filter,
-  .customizable {
+  .customizable,
+  .filter {
     padding: 18px 0;
+  }
+
+  .filter summary {
+    font-size: 11px;
+  }
+
+  .options label {
+    font-size: 11px;
   }
 }

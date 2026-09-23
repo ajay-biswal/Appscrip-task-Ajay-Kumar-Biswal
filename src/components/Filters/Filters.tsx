@@ -2,17 +2,7 @@
 
 import styles from "./Filters.module.css";
 
-interface FiltersProps {
-  selectedCategories?: string[];
-  onCategoryChange?: (category: string) => void;
-}
 
-const categories = [
-  "Electronics",
-  "Jewelery",
-  "Men's Clothing",
-  "Women's Clothing",
-];
 
 const otherFilters = [
   "OCCASION",
@@ -21,12 +11,10 @@ const otherFilters = [
   "SEGMENT",
   "SUITABLE FOR",
   "RAW MATERIALS",
+  "PATTERN",
 ];
 
-export default function Filters({
-  selectedCategories = [],
-  onCategoryChange,
-}: FiltersProps) {
+export default function Filters() {
   return (
     <aside className={styles.sidebar}>
       <label className={styles.customizable}>
@@ -37,34 +25,18 @@ export default function Filters({
       <details className={styles.filter} open>
         <summary>
           <span>IDEAL FOR</span>
-          <span className={styles.chevron}>⌃</span>
+          <span className={styles.chevron} />
         </summary>
 
         <div className={styles.options}>
-          {["Men", "Women", "Kids"].map((option) => (
+          <label className={styles.allOption}>
+            <span>Unselect all</span>
+          </label>
+
+          {["Men", "Women", "Baby & Kids"].map((option) => (
             <label key={option}>
               <input type="checkbox" />
               <span>{option}</span>
-            </label>
-          ))}
-        </div>
-      </details>
-
-      <details className={styles.filter}>
-        <summary>
-          <span>CATEGORY</span>
-          <span className={styles.chevron}>⌄</span>
-        </summary>
-
-        <div className={styles.options}>
-          {categories.map((category) => (
-            <label key={category}>
-              <input
-                type="checkbox"
-                checked={selectedCategories.includes(category)}
-                onChange={() => onCategoryChange?.(category)}
-              />
-              <span>{category}</span>
             </label>
           ))}
         </div>
@@ -74,7 +46,7 @@ export default function Filters({
         <details key={filter} className={styles.filter}>
           <summary>
             <span>{filter}</span>
-            <span className={styles.chevron}>⌄</span>
+            <span className={styles.chevron} />
           </summary>
         </details>
       ))}
